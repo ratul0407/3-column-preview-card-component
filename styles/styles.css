@@ -83,7 +83,7 @@ body {
   background-color: var(--clr-very-light-gray);
 }
 main {
-  margin: 0 8rem;
+  margin: 0 11rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
