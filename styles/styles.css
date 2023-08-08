@@ -1,0 +1,159 @@
+:root {
+  /* Primary colors */
+  --clr-primary-bright-orange: hsl(31, 77%, 52%);
+  --clr-primary-dark-cyan: hsl(184, 100%, 22%);
+  --clr-primary-very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral colors */
+  --clr-neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-very-light-gray: hsl(0, 0%, 95%);
+
+  /* Font familys */
+  --fm-lexend-deca: "Lexend Deca", sans-serif;
+  --fm-big-shoulders-display: "Big Shoulders Display", cursive;
+}
+
+/* css reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, padding and font */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-very-light-gray);
+}
+main {
+  margin: 0 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+h2 {
+  color: var(--clr-neutral-very-light-gray);
+  font-size: 2rem;
+  font-family: var(--fm-big-shoulders-display);
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+p {
+  font-family: var(--fm-lexend-deca);
+  color: var(--clr-neutral-transparent-white);
+  line-height: 1.8;
+  padding-bottom: 6rem;
+}
+.btn {
+  border: none;
+  background-color: var(--clr-neutral-very-light-gray);
+  color: inherit;
+  padding: 0.5rem 2rem;
+  border-radius: 5rem;
+  font-family: var(--fm-lexend-deca);
+}
+.sedans .btn {
+  color: var(--clr-primary-bright-orange);
+  /* padding: 3rem; */
+}
+.suvs .btn {
+  color: var(--clr-primary-dark-cyan);
+}
+.luxary .btn {
+  color: var(--clr-primary-very-dark-cyan);
+}
+.sedans {
+  background-color: var(--clr-primary-bright-orange);
+  padding: 3rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.suvs {
+  background-color: var(--clr-primary-dark-cyan);
+  padding: 3rem;
+}
+.luxary {
+  background-color: var(--clr-primary-very-dark-cyan);
+  padding: 3rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.individual-container {
+  padding-top: 2rem;
+}
+
+@media (max-width: 425px) {
+  body main {
+    grid-template-columns: 1fr;
+    margin: 3rem 1rem;
+  }
+  .sedans {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .luxary {
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  p {
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    margin: 3rem 0.5rem;
+  }
+}
